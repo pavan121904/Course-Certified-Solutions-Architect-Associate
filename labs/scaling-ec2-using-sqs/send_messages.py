@@ -29,11 +29,6 @@ try:
 except ClientError as e:
     logging.error(e)
     exit(1)
-
-queue_url = response["QueueUrl"]
-
-logging.info(f"Queue URL: {queue_url}")
-
 while True:
     try:
         message = str(uuid.uuid4())
